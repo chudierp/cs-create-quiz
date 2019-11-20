@@ -74,13 +74,6 @@ def question_five():
         return 0
 
 
-def play_again():
-    guess=(input('Play Again?(Y/N'))
-    guess = guess.lower()
-    if guess == 'y':
-        return True
-    else:
-        return False
 
 
 
