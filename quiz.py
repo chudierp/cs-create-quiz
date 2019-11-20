@@ -11,6 +11,7 @@ def question_one():
     elif response != correct_answer:
         print("That was incorrect, the correct answer was " + correct_answer)
         return 0
+        
 
 def question_two():
     """The user enters in a character "a" through "e" for their answer."""
@@ -68,10 +69,18 @@ def question_five():
     if response == correct_answer:
         print("Correct")
         return 1
-    elif response == correct_answer: 
+    elif response != correct_answer: 
         print("That was incorrect, the correct answer was " + correct_answer)
-        return 0        
+        return 0
 
+
+def play_again():
+    guess=(input('Play Again?(Y/N'))
+    guess = guess.lower()
+    if guess == 'y':
+        return True
+    else:
+        return False
 
 
 
@@ -81,8 +90,17 @@ def question_five():
 
 #Code to run the quiz
 total_score = 0
-result = question_one() + question_two() + question_three() + question_four()
+result = question_one() + question_two() + question_three() + question_four() + question_five()
 total_score += result
-# print("Here's how many questions you got correct out of 5 \n 4 and above means you passed the test \n anything below means you need more practice")
+print("Below is how many questions you got correct out of 5")
 print(total_score)        
 
+#Final Message Options
+if total_score <= 1:
+    print(f"You scored {total_score} out of 5. Now that's not very patriotic of you")
+
+elif total_score <= 4:
+    print(f"You scored {total_score} out of 5. You must spend a lot of your time on Facebook")
+
+elif total_score == 5:
+    print(f"You scored {total_score} out of 5. You should run for President")
